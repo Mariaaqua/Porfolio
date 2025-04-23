@@ -1,0 +1,311 @@
+:root {
+    --accent: #c084fc;
+    --accent-hover: #a855f7;
+    --bg: #fdfcfb;
+    --text: #2c2c2c;
+    --soft: #f4f0ff;
+}
+
+/* Estilos generales */
+* {
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Playfair Display', serif;
+    background-color: var(--bg);
+    color: var(--text);
+    line-height: 1.6;
+}
+
+/* Encabezado */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem 2rem;
+    border-bottom: 1px solid #e0e0e0;
+    background-color: #fff;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+header img {
+    height: 48px;
+}
+
+nav a {
+    margin-left: 1.5rem;
+    text-decoration: none;
+    color: var(--text);
+    font-weight: 600;
+    transition: color 0.3s;
+}
+
+nav a:hover {
+    color: var(--accent);
+}
+
+/* Sección Hero */
+.hero {
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+    justify-content: center;
+    padding: 4rem 2rem;
+    text-align: center;
+    animation: fadeIn 1.2s ease-in;
+}
+
+@media(min-width: 1024px) {
+    .hero {
+        flex-direction: row;
+        text-align: left;
+        gap: 4rem;
+        padding: 6rem 4rem;
+    }
+}
+
+.hero img {
+    width: 260px;
+    height: 260px;
+    border-radius: 50%;
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
+    margin-bottom: 2rem;
+}
+
+.hero-text h2 {
+    font-size: 3rem;
+    font-weight: 700;
+    color: var(--text);
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+    transition: color 0.3s, text-shadow 0.3s;
+}
+
+.hero-text h2:hover {
+    color: var(--accent);
+    text-shadow: 3px 3px 8px rgba(0, 0, 0, 0.2);
+}
+
+.hero-text p {
+    font-size: 1.2rem;
+    margin-bottom: 1.5rem;
+    color: #444;
+}
+
+.hero-text a {
+    display: inline-block;
+    background-color: var(--accent);
+    color: #fff;
+    padding: 0.75rem 1.5rem;
+    border-radius: 2rem;
+    text-decoration: none;
+    font-weight: 600;
+    transition: background 0.3s, transform 0.3s;
+}
+
+.hero-text a:hover {
+    background-color: var(--accent-hover);
+    transform: scale(1.05);
+}
+
+/* Sección Sobre Mí */
+.sobremi {
+    background-color: var(--soft);
+    padding: 4rem 2rem;
+    text-align: center;
+    animation: fadeInUp 1.2s ease-in;
+}
+
+.sobremi h3 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--accent);
+    margin-bottom: 1.5rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.sobremi h3::before {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: linear-gradient(90deg, #c084fc, #a855f7);
+    border-radius: 2px;
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+}
+
+.sobremi h3:hover::before {
+    transform: scaleX(1);
+}
+.img-centrada {
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 6rem
+  }
+
+.sobremi p {
+    font-size: 1.125rem;
+    max-width: 800px;
+    margin: 0 auto;
+    color: #555;
+}
+
+/* Secciones de Áreas */
+.area {
+    padding: 6rem 2rem;
+    text-align: center;
+    color: var(--text);
+    position: relative;
+}
+
+.area h3 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--accent);
+    margin-bottom: 1.5rem;
+    position: relative;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+}
+
+.area h3::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background-color: var(--accent);
+    border-radius: 2px;
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+}
+
+.area h3:hover::after {
+    transform: scaleX(1);
+}
+
+.area p {
+    font-size: 1.2rem;
+    max-width: 700px;
+    margin: 0 auto 2.5rem;
+    color: #444;
+}
+
+.videojuegos {
+    background: linear-gradient(135deg, #ede9fe, #fdf4ff);
+    clip-path: polygon(0 0, 100% 4%, 100% 100%, 0% 100%);
+}
+
+/* Grid de Proyectos */
+.proyectos-grid {
+    display: grid;
+    gap: 2rem;
+    grid-template-columns: 1fr;
+}
+
+@media(min-width: 768px) {
+    .proyectos-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media(min-width: 1024px) {
+    .proyectos-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+.card {
+    background-color: #fff;
+    border-radius: 12px;
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: center;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+    position: relative;
+    border: 1px solid #e0e0e0;
+}
+
+.card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+}
+
+/* Estilo para los títulos de las tarjetas */
+.card h4 {
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    font-size: 1.5rem;
+    color: var(--accent);
+    margin-top: 1rem;
+    transition: color 0.3s ease;
+}
+
+.card:hover h4 {
+    color: var(--accent-hover);
+}
+
+/* Estilo para los párrafos en las tarjetas */
+.card p {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: #555;
+    margin-top: 0.8rem;
+    transition: color 0.3s ease;
+}
+
+.card:hover p {
+    color: #444;
+}
+
+/* Estilo de la imagen */
+.card img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    object-fit: cover;
+    transition: box-shadow 0.3s ease;
+}
+
+.card:hover img {
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.card a {
+    text-decoration: none;
+    color: var(--accent);
+    font-weight: 600;
+    margin-top: 1rem;
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    border-radius: 1.5rem;
+    background-color: var(--accent-soft);
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.card a:hover {
+    background-color: var(--accent-hover);
+    transform: scale(1.05);
+}
